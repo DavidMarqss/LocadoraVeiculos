@@ -7,6 +7,7 @@ const login = require('./middleware/login.js');
 
 const UserController = require("./controllers/UserController");
 const CarController = require("./controllers/CarController");
+const RegisterController = require('./controllers/RegisterController.js');
 
 
 
@@ -26,8 +27,12 @@ router.post('/cars', login.required,CarController.addCar);
 router.put('/cars/:id_car', login.required,CarController.updateCar);
 router.delete('/cars/:id_car', login.required,CarController.delCar);
 
-
-
+//Reservas----
+router.get('/registers', RegisterController.getAllRegisters);
+router.get('/register/:id_aluguel', RegisterController.getRegisterById);
+router.post('/register', RegisterController.addRegister);
+router.put('/register/:id_aluguel', RegisterController.updateRegister);
+router.delete('/register/:id_aluguel',RegisterController.delRegister)
 
 
 module.exports = router;
