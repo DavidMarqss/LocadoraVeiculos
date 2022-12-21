@@ -35,7 +35,7 @@ module.exports = {
 
         let data_inicio = req.body.data_inicio;
 
-        let data_fim = req.body.data_inicio;
+        let data_fim = req.body.data_fim;
 
         let hora_inicio = req.body.hora_inicio;
 
