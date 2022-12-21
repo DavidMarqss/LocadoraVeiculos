@@ -30,9 +30,9 @@ router.delete('/cars/:id_car', login.required,CarController.delCar);
 //Reservas----
 router.get('/registers', RegisterController.getAllRegisters);
 router.get('/register/:id_aluguel', RegisterController.getRegisterById);
-router.post('/register', RegisterController.addRegister);
-router.put('/register/:id_aluguel', RegisterController.updateRegister);
-router.delete('/register/:id_aluguel',RegisterController.delRegister)
+router.post('/register', login.required, RegisterController.addRegister);
+router.put('/register/:id_aluguel', login.required, RegisterController.updateRegister);
+router.delete('/register/:id_aluguel', login.required, RegisterController.delRegister)
 
 
 module.exports = router;

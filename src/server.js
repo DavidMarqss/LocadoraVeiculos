@@ -10,7 +10,6 @@ const routes = require("./routes");
 const server = express();
 server.use(bodyParser.json())
 server.use(cors());
-server.use('/upload', express.static('upload'));
 server.use(bodyParser.urlencoded({extended: false}));
 
 
