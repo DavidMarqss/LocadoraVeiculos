@@ -2,9 +2,6 @@ const express = require('express');
 const router = express.Router();
 
 const login = require('./middleware/login.js');
-
-
-
 const UserController = require("./controllers/UserController");
 const CarController = require("./controllers/CarController");
 const RegisterController = require('./controllers/RegisterController.js');
