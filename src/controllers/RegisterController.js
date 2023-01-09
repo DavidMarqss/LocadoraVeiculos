@@ -107,6 +107,9 @@ module.exports = {
         let json = {error: '', result:{}};
 
         await RegisterService.delRegister(req.params.id_aluguel);
+        json.result = {
+            msg: "Deletado com Sucesso"
+        }
         res.json(json);
     },
 

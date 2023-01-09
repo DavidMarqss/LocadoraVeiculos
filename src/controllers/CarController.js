@@ -37,6 +37,7 @@ module.exports = {
         try{
             await CarService.addCar(id_car, marca, modelo, ano);
             json.result = {
+                msg: "Cadastrado com Sucesso",
                 id_car,
                 marca,
                 modelo,
@@ -68,6 +69,7 @@ module.exports = {
         try{
             await CarService.updateCar(id_car, marca, modelo, ano);
             json.result = {
+                msg: "Alterado com Sucesso",
                 id_car,
                 marca,
                 modelo,
@@ -83,6 +85,9 @@ module.exports = {
         let json = {error: '', result:{}};
 
         await CarService.delCar(req.params.id_car);
+        json.result = {
+            msg: "Deletado com Sucesso"
+        }
         res.json(json);
     },
 };

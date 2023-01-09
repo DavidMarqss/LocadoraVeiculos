@@ -40,6 +40,7 @@ module.exports = {
             const hashedPassword = await bcrypt.hash(senha, 8)
             await UserService.addUser(id, nome, hashedPassword);
             json.result = {
+                msg: "Cadastrado com Sucesso",
                 nome,
                 senha  
                 
@@ -66,6 +67,7 @@ module.exports = {
             const hashedPassword = await bcrypt.hash(senha, 8)
             await UserService.updateUser(id, nome, hashedPassword);
             json.result = {
+                msg: "Alterado com Sucesso",
                 id,
                 nome,
                 senha,
@@ -80,6 +82,9 @@ module.exports = {
         let json = {error: '', result:{}};
 
         await UserService.delUser(req.params.id);
+        json.result = {
+            msg: "Deletado com Sucesso"
+        }
         res.json(json);
     },
 
